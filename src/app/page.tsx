@@ -7,6 +7,7 @@ import { ArrowRight, Users, Home, Heart, Star, Shield, Zap } from 'lucide-react'
 import AnimatedText from '@/components/ui/AnimatedText';
 import GlassCard from '@/components/ui/GlassCard';
 import FloatingElements from '@/components/ui/FloatingElements';
+import WebGLShaderAnimation from '@/components/ui/WebGLShaderAnimation';
 
 export default function LandingPage() {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -42,7 +43,17 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Shader Animation Background */}
+      <WebGLShaderAnimation 
+        intensity={0.6}
+        speed={1.2}
+        colors={['#1E40AF', '#7C3AED', '#DB2777', '#0891B2']}
+      />
+      
+      {/* Fallback gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900" />
+      
       <FloatingElements />
       
       {/* Navigation */}
