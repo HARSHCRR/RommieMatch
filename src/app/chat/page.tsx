@@ -7,7 +7,6 @@ import { Conversation } from '@/lib/chatService';
 import ConversationList from '@/components/Chat/ConversationList';
 import ChatInterface from '@/components/Chat/ChatInterface';
 import GlassCard from '@/components/ui/GlassCard';
-import WebGLShaderAnimation from '@/components/ui/WebGLShaderAnimation';
 import { Search, MessageCircle, Filter, Archive } from 'lucide-react';
 
 export default function ChatPage() {
@@ -100,16 +99,7 @@ export default function ChatPage() {
   const filteredConversations = searchQuery ? searchConversations(searchQuery) : conversations;
 
   return (
-    <div className="min-h-screen relative overflow-hidden p-4">
-      {/* Shader Animation Background */}
-      <WebGLShaderAnimation 
-        intensity={0.3}
-        speed={0.6}
-        colors={['#1E40AF', '#7C3AED', '#DB2777', '#0891B2']}
-      />
-      
-      {/* Fallback gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900" />
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">

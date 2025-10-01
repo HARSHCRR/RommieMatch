@@ -31,6 +31,14 @@ module.exports = {
           700: '#b91c1c',
           800: '#991b1b',
           900: '#7f1d1d',
+        },
+        shader: {
+          orange: '#ff6b35',
+          yellow: '#f7931e',
+          blue: '#00d4ff',
+          electric: '#00ffff',
+          dark: '#0a0a0a',
+          gray: '#1a1a1a',
         }
       },
       fontFamily: {

@@ -7,7 +7,7 @@ import { ArrowRight, Users, Home, Heart, Star, Shield, Zap } from 'lucide-react'
 import AnimatedText from '@/components/ui/AnimatedText';
 import GlassCard from '@/components/ui/GlassCard';
 import FloatingElements from '@/components/ui/FloatingElements';
-import WebGLShaderAnimation from '@/components/ui/WebGLShaderAnimation';
+import ShaderAnimation from '@/components/ui/ShaderAnimation';
 
 export default function LandingPage() {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -44,16 +44,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Shader Animation Background */}
-      <WebGLShaderAnimation 
-        intensity={0.6}
-        speed={1.2}
-        colors={['#1E40AF', '#7C3AED', '#DB2777', '#0891B2']}
-      />
-      
-      {/* Fallback gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900" />
-      
+      <ShaderAnimation className="absolute inset-0" />
       <FloatingElements />
       
       {/* Navigation */}
@@ -111,16 +102,16 @@ export default function LandingPage() {
             </span>
           </motion.div>
           
-          <AnimatedText
-            text="Find Your Perfect"
-            className="text-6xl md:text-8xl font-bold text-white mb-4"
-            delay={0.2}
-          />
-          <AnimatedText
-            text="Roommate & Room"
-            className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-8"
-            delay={0.6}
-          />
+              <AnimatedText
+                text="Find Your Perfect"
+                className="text-6xl md:text-8xl font-bold text-white mb-4"
+                delay={0.2}
+              />
+              <AnimatedText
+                text="Roommate & Room"
+                className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent mb-8"
+                delay={0.6}
+              />
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -138,27 +129,27 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <Link href="/signup?mode=seeker">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2"
-              >
-                <span>Find a Room</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
+                <Link href="/signup?mode=seeker">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 flex items-center space-x-2"
+                  >
+                    <span>Find a Room</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                </Link>
             
-            <Link href="/signup?mode=host">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold border border-white/20 transition-all duration-300 flex items-center space-x-2"
-              >
-                <span>List Your Space</span>
-                <Home className="w-5 h-5" />
-              </motion.button>
-            </Link>
+                <Link href="/signup?mode=host">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2"
+                  >
+                    <span>List Your Space</span>
+                    <Home className="w-5 h-5" />
+                  </motion.button>
+                </Link>
           </motion.div>
         </div>
       </section>
@@ -213,18 +204,18 @@ export default function LandingPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 onHoverStart={() => setActiveFeature(index)}
               >
-                <GlassCard
-                  className="p-8 h-full cursor-pointer"
-                  hover={true}
-                >
-                  <div className="text-blue-400 mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </GlassCard>
+                    <GlassCard
+                      className="p-8 h-full cursor-pointer"
+                      hover={true}
+                    >
+                      <div className="text-orange-400 mb-4">{feature.icon}</div>
+                      <h3 className="text-xl font-semibold text-white mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-white/70 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </GlassCard>
               </motion.div>
             ))}
           </div>
@@ -274,17 +265,17 @@ export default function LandingPage() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="text-center"
               >
-                <GlassCard className="p-8">
-                  <div className="text-6xl font-bold text-blue-400 mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed">
-                    {step.description}
-                  </p>
-                </GlassCard>
+                    <GlassCard className="p-8">
+                      <div className="text-6xl font-bold text-yellow-400 mb-4">
+                        {step.step}
+                      </div>
+                      <h3 className="text-2xl font-semibold text-white mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-white/70 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </GlassCard>
               </motion.div>
             ))}
           </div>
@@ -307,15 +298,15 @@ export default function LandingPage() {
                 Join thousands of happy users who found their ideal living situation.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link href="/signup">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
-                  >
-                    Get Started Free
-                  </motion.button>
-                </Link>
+                    <Link href="/signup">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300"
+                      >
+                        Get Started Free
+                      </motion.button>
+                    </Link>
                 <Link href="/demo">
                   <motion.button
                     whileHover={{ scale: 1.05 }}

@@ -6,7 +6,6 @@ import { Heart, MessageCircle, Users, TrendingUp, Filter, ArrowLeft } from 'luci
 import Link from 'next/link';
 import MatchingInterface from '@/components/Matching/MatchingInterface';
 import GlassCard from '@/components/ui/GlassCard';
-import WebGLShaderAnimation from '@/components/ui/WebGLShaderAnimation';
 import { MatchResult } from '@/lib/matchingAlgorithm';
 
 export default function SwipePage() {
@@ -20,16 +19,7 @@ export default function SwipePage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Shader Animation Background */}
-      <WebGLShaderAnimation 
-        intensity={0.4}
-        speed={0.8}
-        colors={['#1E40AF', '#7C3AED', '#DB2777', '#0891B2']}
-      />
-      
-      {/* Fallback gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900" />
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
       {/* Header */}
       <header className="bg-white/10 backdrop-blur-md border-b border-white/20">
         <div className="max-w-7xl mx-auto px-6 py-4">
